@@ -1,0 +1,161 @@
+#!/usr/bin/env python
+# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import struct
+import sys
+import json
+import requests
+import pickle
+from crypto.reader import ChannelReader
+from crypto.data_pkg import EncryptedDataPackage
+
+# On Windows, the default I/O mode is O_TEXT. Set this to O_BINARY
+# to avoid unwanted modifications of the input/output streams.
+if sys.platform == "win32":
+    import os, msvcrt
+    msvcrt.setmode(sys.stdin.fileno(), os.O_BINARY)
+    msvcrt.setmode(sys.stdout.fileno(), os.O_BINARY)
+
+
+class ShutUp:
+    '''
+    Used to manage shut up periods, cause Google Chrome reads everypthing from Native app
+
+    Use talk_to_term to address all output to stdout
+    and talk_to_google to restore output to google chrome
+    '''
+
+    def talk_to_term(self):
+        self.current_stdout = sys.stdout
+        sys.stdout.flush()
+        sys.stdout = sys.stderr
+
+    def talk_to_google(self):
+        sys.stdout.flush()
+        sys.stdout = self.current_stdout
+
+shutup = ShutUp()
+
+shutup.talk_to_term()
+# Open ChannelReader for decrypting keys
+channel_reader = ChannelReader()
+public_reader = channel_reader.get_public_reader()
+public_reader_json = public_reader.to_json()
+
+shutup.talk_to_google()
+
+
+
+def request_handler(url: str, tab_id: int) -> None:
+    '''
+    Get url and returns JWT code
+    :param url:
+    :return:
+    '''
+    # Getting label from access server
+    # Todo: Label caching
+
+    # Redirecting output to term
+    shutup.talk_to_term()
+
+    # Nutouch server
+    #access_server = "http://139.162.174.198:8000"
+    access_server = "http://127.0.0.1:8000"
+    try:
+        data = {"url": url, "public_reader_json": public_reader_json}
+        sys.stderr.write("\n\nSending request #1: '\n" + repr(data))
+        response = requests.post(access_server + "/api/sites/get_label/", data=data)
+        channel_json = response.json()
+        sys.stderr.write("\n\nReceived Response #1: \n" + channel_json)
+    except IOError:
+        sys.stderr.write("Error in access service response" + repr(channel_json))
+        return
+
+    # We change url to 127.0.0.1 just for testing purposes
+
+
+    # Client server
+    url = "http://127.0.0.1:5000"
+    # Making auth request to url server
+    # Note: /nuath/token/obtain is standart path for all servers supporting Nutouch authentification
+    try:
+        data = {"channel_json": channel_json, "channel_reader": public_reader_json}
+
+        sys.stderr.write("\n\nSending request #2: '\n" + repr(data))
+
+        response = requests.post(url + "/api/nuauth/token/obtain/", data=data)
+        response_json = response.text # We get direct JSON, cause it was made on Server
+
+        package = EncryptedDataPackage.from_json(response_json)
+        sys.stderr.write("\n\n\nGOT PACKAGE::::" + repr(response_json))
+
+        pickled_data = package.decrypt(channel_reader)[0]    # Decrpyt & unpack
+        sys.stderr.write("\nDATA:::: \n" + repr(pickled_data))
+
+        data = pickle.loads(pickled_data)
+
+        sys.stderr.write("\n\nDATA::::" + repr(data))
+
+        access_token = data['access']
+        refresh_token = data['refresh']
+
+        # Return stdout to Google
+        shutup.talk_to_google()
+        send_message('{"access": "%s", "refresh": "%s", "tabId": "%s", "public_reader_json": "%s"}' %
+                     (access_token,
+                      refresh_token,
+                      tab_id,
+                      pickle.dumps(public_reader_json).hex(),))
+
+    except:
+        sys.stderr.write("Error in connecting to url server" + repr(response_json))
+        shutup.talk_to_google()
+
+
+def send_message(message: bytes) -> None:
+    '''
+    Sends messages to background.js
+    :param message: bytes to send
+    :return: None
+    '''
+    # Write message size.
+    message = message.encode('utf-8')
+    sys.stdout.buffer.write(struct.pack('I', len(message)))
+    # Write the message itself.
+    sys.stdout.buffer.write(message)
+    sys.stdout.flush()
+
+
+def read_messages() -> None:
+    '''
+    Loop function which reads from stdin and run threads for all new requests
+    :return:
+    '''
+
+    while True:
+        # Read the message length (first 4 bytes).
+        text_length_bytes = sys.stdin.buffer.read(4)
+
+        if len(text_length_bytes) == 0:
+            sys.exit(0)
+
+        # Unpack message length as 4 byte integer.
+        text_length = struct.unpack('i', text_length_bytes)[0]
+
+        # Read the text (JSON object) of the message.
+        text = sys.stdin.buffer.read(text_length).decode('utf-8')
+
+        try:
+            json_dict = json.loads(text)
+            url = json_dict['url']
+            tab_id = json_dict['tabId']
+
+        except:
+            sys.stderr.write("Invalid Request" + text)
+
+        request_handler(url, tab_id)
+
+if __name__ == '__main__':
+    read_messages()

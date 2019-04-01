@@ -1,0 +1,21 @@
+{
+  "short_name": "BL",
+  "name": "Below The Lines",
+  "manifest_version": 2,
+  "browser_action": {
+  },
+
+  "version": "1.0",
+  "content_scripts": [
+      {
+         "matches": ["http://*/*", "https://*/*"],
+         "js": ["content.js"]
+      }
+   ],
+   "background": {
+      "persistent": true,
+      "scripts": ["background.js"]
+   },
+   "web_accessible_resources": ["page.js"],
+   "permissions": ["tabs", "nativeMessaging"]
+}  
