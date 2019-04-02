@@ -1,10 +1,10 @@
 {
-  "short_name": "BL",
-  "name": "Below The Lines",
+  "short_name": "Snowden",
+  "name": "Snowden - share your thoughts free",
   "manifest_version": 2,
   "browser_action": {
+    "default_title": "Google Mail"
   },
-
   "version": "1.0",
   "content_scripts": [
       {

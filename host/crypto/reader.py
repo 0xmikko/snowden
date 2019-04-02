@@ -1,7 +1,11 @@
-import sys
 import json
 import os
 import shutil
+import base58
+
+import maya
+import pickle
+from django.conf import settings, global_settings
 
 from nucypher.characters.lawful import Alice, Bob, Ursula
 from nucypher.network.middleware import RestMiddleware
@@ -14,6 +18,12 @@ from .utils import get_or_create_path
 
 
 class ChannelReader:
+    '''
+    ChannelReader are peers who have rights to read different Channels if it was granted.
+    ChannelReader contains private keys and could not be serialized for this moment.
+
+    To serialize ChannelReader use ChannelReader public which provides neccessary methods
+    '''
 
     # Singleton pattern
     __instance = None
@@ -29,14 +39,13 @@ class ChannelReader:
         #globalLogPublisher.addObserver(simpleObserver)
 
         # Temporary file storage
-        self.TEMP_FILES_DIR = get_or_create_path(os.path.join(os.getcwd(), 'keys'))
+        self.TEMP_FILES_DIR = get_or_create_path(os.path.join(settings.BASE_DIR, 'keys'))
         self.TEMP_URSULA_DIR = get_or_create_path(os.path.join(self.TEMP_FILES_DIR, 'ursula'))
         self.TEMP_BOB_DIR = get_or_create_path(os.path.join(self.TEMP_FILES_DIR, 'bob'))
         self.TEMP_BOB_URSULA_DIR = "{}/ursula-certs".format(self.TEMP_BOB_DIR)
 
         # Getting TESTNET_LOAD_BALANCER from Django configuration file
         self.SEEDNODE_URL = "127.0.0.1:11500"#settings.SEEDNODE_URL
-
         self.ursula = Ursula.from_seed_and_stake_info(seed_uri=self.SEEDNODE_URL,
                                                      federated_only=True,
                                                      minimum_stake=0)
@@ -50,8 +59,6 @@ class ChannelReader:
     def get_public_reader(self) -> object:
         channel_reader_public = ChannelReaderPublic(signing_power_bytes=self.BOB.public_keys(SigningPower).to_bytes(),
                                                     decrypt_power_bytes=self.BOB.public_keys(DecryptingPower).to_bytes())
-
-        sys.stderr.write("Generated keys: " + channel_reader_public.to_json())
 
         return channel_reader_public
 
@@ -70,7 +77,7 @@ class ChannelReader:
         :param passphrase: Passpharse for new Bob instance
         :return: None
         '''
-        sys.stderr.write("Nutouch: getting Bob")
+
         try:
 
             bob_config_file = os.path.join(self.TEMP_BOB_DIR, "config_root", "bob.config")
@@ -83,7 +90,6 @@ class ChannelReader:
             bob = new_bob_config(passphrase=passphrase)
 
         except:
-            sys.stderr.write("Nutouch: creating Bob")
             shutil.rmtree(self.TEMP_BOB_DIR, ignore_errors=True)
             os.mkdir(self.TEMP_BOB_DIR)
 
@@ -106,6 +112,9 @@ class ChannelReader:
 
 
 class ChannelReaderPublic:
+    '''
+    Public part of Channel Reader. Used for serialization
+    '''
 
     def __init__(self, signing_power_bytes: bytes, decrypt_power_bytes: bytes):
 
@@ -130,7 +139,6 @@ class ChannelReaderPublic:
             decrypt_power_bytes = bytes.fromhex(json_dict['decrypt_power'])
 
         except KeyError:
-            sys.stderr.write("JSON was incorrect" + json_data)
             return None
 
         return ChannelReaderPublic(signing_power_bytes=signing_power_bytes,

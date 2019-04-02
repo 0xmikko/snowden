@@ -1,0 +1,32 @@
+[INFO  - 2019-04-01T11:02:26.636Z] GhostDriver - Main - running on port 62521
+[INFO  - 2019-04-01T11:02:26.852Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2019-04-01T11:02:26.852Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - page.customHeaders:  - {}
+[INFO  - 2019-04-01T11:02:26.853Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2019-04-01T11:02:26.853Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: a2a63200-546d-11e9-a584-a3252e28a824
+[ERROR - 2019-04-01T11:02:27.707Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - page.onError - msg: ReferenceError: Can't find variable: Map
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2019-04-01T11:02:27.707Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - page.onError - stack:
+  t (https://ssp.rambler.ru/capirs_async.js:16)
+  t (https://ssp.rambler.ru/capirs_async.js:16)
+  (anonymous function) (https://ssp.rambler.ru/capirs_async.js:1)
+  i (https://ssp.rambler.ru/capirs_async.js:1)
+  (anonymous function) (https://ssp.rambler.ru/capirs_async.js:16)
+  i (https://ssp.rambler.ru/capirs_async.js:1)
+  (anonymous function) (https://ssp.rambler.ru/capirs_async.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2019-04-01T11:02:27.897Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - page.onError - msg: Script error.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2019-04-01T11:02:27.897Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - page.onError - stack:
+  showMessange (https://ssp.rambler.ru/capirs_async.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2019-04-01T11:02:28.437Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - page.onError - msg: SyntaxError: Expected an identifier but found 'bd' instead
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2019-04-01T11:02:28.438Z] Session [a2a63200-546d-11e9-a584-a3252e28a824] - page.onError - stack:
+  showMessange (https://ssp.rambler.ru/capirs_async.js:1)
+
+  phantomjs://platform/console++.js:263 in error

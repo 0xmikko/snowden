@@ -1,8 +1,14 @@
-import sys
 import pickle
 import json
 
+
 class Channel:
+    '''
+    Channel is core functional idea to use Nucypher technology in web. Channels are used to share info
+    between ChannelReader. Channels are manager by ChannelManagers who could grant and revoke access to them
+
+    Channels are fully serializable and could be transffered in JSON representaion
+    '''
 
     def __init__(self,
                  alice_pubkey_bytes: bytes,
@@ -16,7 +22,7 @@ class Channel:
     @classmethod
     def from_bytes(cls, seralized_object: bytes) -> object:
         '''
-        Creates an Channel from serialization
+        Depriciated
         :param seralized_object:
         :return: EncryptedDataPackage instance
         '''
@@ -38,7 +44,7 @@ class Channel:
             policy_pubkey_bytes = bytes.fromhex(dict['policy_pubkey'])
 
         except KeyError:
-            sys.stderr.write("JSON was incorrect" + json_data)
+            print("JSON was incorrect" + json_data)
             return None
 
         return Channel(alice_pubkey_bytes=alice_pubkey_bytes,
@@ -47,7 +53,7 @@ class Channel:
 
     def to_bytes(self) -> bytes:
         '''
-        Serialize object into bytes
+        Depriciated
         :return:
         '''
         return pickle.dumps(self.to_json())
