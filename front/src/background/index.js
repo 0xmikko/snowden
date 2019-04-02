@@ -6,6 +6,8 @@
  *
 */
 
+var chrome;
+
 // Setting up Native Messaging Connect
 var hostName = "com.nutouch.connect";
 var portNative = chrome.runtime.connectNative(hostName)

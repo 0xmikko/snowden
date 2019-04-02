@@ -18,6 +18,12 @@
             "128": "./images/icon128.png" },
 
   "version": "1.0",
+   "background": {
+      "persistent": true,
+      "scripts": ["runtime~background.js"]
+   },
+   "web_accessible_resources": ["page.js"],
+   "permissions": ["tabs", "nativeMessaging"],
 
    "content_security_policy": "default-src 'self'; script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; style-src * 'unsafe-inline'; img-src 'self' data:;"
 }

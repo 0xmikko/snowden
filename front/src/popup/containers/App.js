@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
 
-import Translate from "../containers/Translate/TranslateForm"
+import Translate from "./Translate/TranslateForm"
 
 import './App.css';
 import AppBar from "../components/AppBar/AppBar";

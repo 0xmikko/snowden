@@ -1,0 +1,113 @@
+#div-bg{
+    background: url("/images/loginbg-1920x1280.jpg") no-repeat center top;
+    background-size: cover;
+}
+
+/*.login-page {*/
+/*  min-width: 100%;*/
+/*}*/
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+}
+
+.login-panel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 450px;
+  min-height: 300px;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.signup-panel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 450px;
+  min-height: 300px;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.welcome-text {
+    margin-bottom: 25px;
+}
+
+#input-log-i {
+  margin-left: 10%;
+}
+#input-sign-up {
+  margin-left: 20%;
+}
+
+.login-input{
+    width: 80%;
+    padding: 12px 20px;
+    margin-top: 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    min-height: 50px;
+}
+
+
+
+.login-button{
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 50px;
+    vertical-align: middle;
+}
+
+
+.login-button .m__sign-in-with-google__logo {
+    background: url(/images/download.png) #fff 50% 50% no-repeat;
+    background-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+}
+
+.layout__media__ext {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .login-panel {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .signup-panel {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .active {
+      display: block;
+  }
+}
+
+@media (min-width: 700px) {
+  .login-panel {
+    margin-left: auto;
+    margin-right: auto;
+  }
+ .signup-panel {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
