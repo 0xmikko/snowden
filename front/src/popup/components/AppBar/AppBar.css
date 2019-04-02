@@ -1,0 +1,74 @@
+/* override bootstrap navbar colors */
+.navbar,
+.navbar-default {
+  display: flex;    
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 0;
+  border-width: 0px;
+  min-height: 70px;
+  margin-bottom: 0px;
+}
+
+
+.navbar .navbar-brand > a {
+    color: #E0E0E0;
+    background-color: #FFFF;
+
+  }
+
+.nav-link > li > a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+  }
+
+.navbar-default .navbar-nav > li > a:active {
+    color: #ffffff;
+  }
+
+.navbar-default .navbar-nav > li > a:focus {
+    color: #FFFFFF;
+    opacity: 0.6;
+  }
+
+.navbar_header{
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.container{
+    max-width: 100vw;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+}
+
+.cont_grid{
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.navbar-right {
+    display: block;
+}
+
+
+@media screen and (min-width: 1024px) {
+   .container{
+      width: 80%;
+    }
+
+   .navbar_header {
+       margin-top: 10px;
+       padding-left: 0px;
+       padding-right: 0px;
+   }
+
+   .cont_grid{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+}

@@ -14,7 +14,7 @@
    ],
    "background": {
       "persistent": true,
-      "scripts": ["background.js"]
+      "scripts": ["runtime~background.js"]
    },
    "web_accessible_resources": ["page.js"],
    "permissions": ["tabs", "nativeMessaging"]
