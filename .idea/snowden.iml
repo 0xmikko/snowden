@@ -13,18 +13,32 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/app/build" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/app/config" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/background" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/background/actions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/background/reducers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/content" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup/actions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup/components" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup/components/API" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup/components/AppBar" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup/containers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup/containers/Read" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup/containers/Settings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/popup/containers/Write" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/config/jest" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/host/proteinaceous" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/host/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/host/chrome_native/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/host/keys" />
+      <excludeFolder url="file://$MODULE_DIR$/host/proteinaceous/.pytest_cache" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (snowden)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="TemplatesService">
-    <option name="TEMPLATE_FOLDERS">
-      <list>
-        <option value="$MODULE_DIR$/venv/lib/python3.6/site-packages/django/forms/templates" />
-      </list>
-    </option>
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="pytest" />

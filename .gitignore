@@ -5,6 +5,7 @@
 app/node_modules
 */.pnp
 .pnp.js
+*/.pytest_cache
 
 # testing
 */coverage
