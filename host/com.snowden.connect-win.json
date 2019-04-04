@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 {
-  "name": "com.nutouch.connect",
-  "description": "Nutouch Connect Host",
-  "path": "native-messaging-example-host.bat",
+  "name": "com.snowden.connect",
+  "description": "Snowden host application",
+  "path": "run.bat",
   "type": "stdio",
   "allowed_origins": [
     "chrome-extension://kclibkaolgmlplndlkcojcoinamkamcb/"

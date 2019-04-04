@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 {
-  "name": "com.nutouch.connect",
-  "description": "Chrome Native Messaging API Example Host",
+  "name": "com.snowden.connect",
+  "description": "Snowden host application",
   "path": "HOST_PATH",
   "type": "stdio",
   "allowed_origins": [
-    "chrome-extension://kclibkaolgmlplndlkcojcoinamkamcb/"
+    "chrome-extension://fnedlihbpolenlapcifmifcfelgedebn/"
   ]
 }

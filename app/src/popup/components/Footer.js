@@ -4,16 +4,8 @@ import './Footer.css'
 
 const footer = ( props ) => (
         <footer className="footer navbar-fixed-bottom">
-            <Container>
-                <Row>
-                    <Col sm={6}>
-                         2018 © Mikhail Lazarev, All rights reserved
-                    </Col>
-                    <Col sm={6}>
-                         <a href="http://t.me/mikael_l" target="_blank" rel="noopener noreferrer">Contact</a>
-                    </Col>
-                </Row>
-
+            <Container style={{backgroundColor: "#DDDDDD"}}>
+                        2019 ©  <a href="http://t.me/mikael_l" target="_blank" rel="noopener noreferrer">Mikhail Lazarev</a>, All rights reserved
             </Container>
         </footer>);
 

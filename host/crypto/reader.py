@@ -1,19 +1,13 @@
 import json
 import os
 import shutil
-import base58
-
-import maya
-import pickle
-from django.conf import settings, global_settings
 
 from nucypher.characters.lawful import Alice, Bob, Ursula
 from nucypher.network.middleware import RestMiddleware
 from umbral.keys import UmbralPublicKey
-from nucypher.data_sources import DataSource
 from nucypher.crypto.powers import CryptoPower, SigningPower, NoSigningPower, CryptoPowerUp, DecryptingPower
 from nucypher.config.characters import AliceConfiguration, BobConfiguration
-from nucypher.config.storages import LocalFileBasedNodeStorage
+#from nucypher.config.storages import LocalFileBasedNodeStorage
 from .utils import get_or_create_path
 
 
@@ -39,13 +33,13 @@ class ChannelReader:
         #globalLogPublisher.addObserver(simpleObserver)
 
         # Temporary file storage
-        self.TEMP_FILES_DIR = get_or_create_path(os.path.join(settings.BASE_DIR, 'keys'))
+        self.TEMP_FILES_DIR = get_or_create_path(os.path.join(os.getcwd(), 'keys'))
         self.TEMP_URSULA_DIR = get_or_create_path(os.path.join(self.TEMP_FILES_DIR, 'ursula'))
         self.TEMP_BOB_DIR = get_or_create_path(os.path.join(self.TEMP_FILES_DIR, 'bob'))
         self.TEMP_BOB_URSULA_DIR = "{}/ursula-certs".format(self.TEMP_BOB_DIR)
 
         # Getting TESTNET_LOAD_BALANCER from Django configuration file
-        self.SEEDNODE_URL = "127.0.0.1:11500"#settings.SEEDNODE_URL
+        self.SEEDNODE_URL = "https://localhost:11501"#settings.SEEDNODE_URL
         self.ursula = Ursula.from_seed_and_stake_info(seed_uri=self.SEEDNODE_URL,
                                                      federated_only=True,
                                                      minimum_stake=0)
@@ -81,15 +75,16 @@ class ChannelReader:
         try:
 
             bob_config_file = os.path.join(self.TEMP_BOB_DIR, "config_root", "bob.config")
-            new_bob_config = BobConfiguration.from_configuration_file(
+            bob_config = BobConfiguration.from_configuration_file(
                 filepath=bob_config_file,
                 network_middleware=RestMiddleware(),
                 start_learning_now=False,
                 save_metadata=False,
             )
-            bob = new_bob_config(passphrase=passphrase)
+            bob_config.keyring.unlock(password=passphrase)
+            bob = bob_config.produce()
 
-        except:
+        except ValueError:
             shutil.rmtree(self.TEMP_BOB_DIR, ignore_errors=True)
             os.mkdir(self.TEMP_BOB_DIR)
 
@@ -155,6 +150,9 @@ class ChannelReaderPublic:
             }
 
         return json.dumps(dict)
+
+    def to_human(self) -> str:
+        return self.signing_power_bytes.hex() + ":" + self.decrypt_power_bytes.hex()
 
 
 

@@ -1,18 +1,14 @@
 import datetime
 import os
 import shutil
-import base58
 import sha3
 import random
-
 import maya
-import pickle
-from django.conf import settings
 
 from nucypher.characters.lawful import Alice, Bob, Ursula
 from nucypher.network.middleware import RestMiddleware
-from umbral.keys import UmbralPublicKey
-from nucypher.crypto.powers import CryptoPower, SigningPower, NoSigningPower, CryptoPowerUp, DecryptingPower
+#from umbral.keys import UmbralPublicKey
+#from nucypher.crypto.powers import CryptoPower, SigningPower, NoSigningPower, CryptoPowerUp, DecryptingPower
 from nucypher.config.characters import AliceConfiguration, BobConfiguration
 from .channel import Channel
 from .reader import ChannelReaderPublic
@@ -37,13 +33,13 @@ class ChannelManager:
     def _initalize(self):
 
         # Temporary file storage
-        self.TEMP_FILES_DIR = get_or_create_path(os.path.join(settings.BASE_DIR, 'keys'))
+        self.TEMP_FILES_DIR = get_or_create_path(os.path.join(os.getcwd(), 'keys'))
         self.TEMP_URSULA_DIR = get_or_create_path(os.path.join(self.TEMP_FILES_DIR, 'ursula'))
         self.TEMP_ALICE_DIR = get_or_create_path(os.path.join(self.TEMP_FILES_DIR, 'alice'))
         self.TEMP_ALICE_URSULA_DIR = "{}/ursula-certs".format(self.TEMP_ALICE_DIR)
 
         # Getting TESTNET_LOAD_BALANCER from Django configuration file
-        self.SEEDNODE_URL = "127.0.0.1:11500"#settings.SEEDNODE_URL
+        self.SEEDNODE_URL = "https://localhost:11501"#settings.SEEDNODE_URL
         self.ursula = Ursula.from_seed_and_stake_info(seed_uri=self.SEEDNODE_URL,
                                                      federated_only=True,
                                                      minimum_stake=0)
@@ -76,7 +72,6 @@ class ChannelManager:
                          n=n,
                          expiration=policy_end_datetime)
 
-
     def get_alice_public_key(self):
         return bytes(self.ALICE.stamp)
 
@@ -85,21 +80,22 @@ class ChannelManager:
 
     def _get_alice(self):
         # Gets an Alice instance
-        print('Getting an Alice')
+        #print('Getting an Alice')
         try:  # If we had an existing Alicia in disk, let's get it from there
             alice_config_file = os.path.join(self.TEMP_ALICE_DIR, "config_root", "alice.config")
             new_alice_config = AliceConfiguration.from_configuration_file(
                 filepath=alice_config_file,
+                known_nodes=[self.ursula],
                 network_middleware=RestMiddleware(),
-                known_nodes={self.ursula},
                 start_learning_now=False,
                 save_metadata=False,
             )
-            alicia = new_alice_config(passphrase=self.passphrase)
+            #new_alice_config.keyring.unlock(password=self.passphrase)
+            alicia = new_alice_config.produce()
         except:  # If anything fails, let's create Alicia from scratch
             # Remove previous demo files and create new ones
 
-            print("Creating ALICE")
+            #print("Creating ALICE")
 
             shutil.rmtree(self.TEMP_ALICE_DIR, ignore_errors=True)
             os.mkdir(self.TEMP_ALICE_DIR)
@@ -108,7 +104,7 @@ class ChannelManager:
             alice_config = AliceConfiguration(
                 config_root=os.path.join(self.TEMP_ALICE_DIR, "config_root"),
                 is_me=True,
-                known_nodes={self.ursula},
+                known_nodes=[self.ursula],
                 start_learning_now=False,
                 federated_only=True,
                 learn_on_same_thread=True,

@@ -1,29 +1,43 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router';
 
-//import Translate from "./Translate/TranslateForm"
-
-import './App.css';
 import AppBar from "../components/AppBar/AppBar";
+import Footer from "../components/Footer";
 
+import Write from "./Write/Write"
+import Read from "./Read/Read"
+import SettingsForm from "./Settings/Settings"
+import './App.css';
 
-const A = (props) => ("HELLO");
-const B = (props) => ("ODD");
 
 class App extends Component {
+
   render() {
+
+    let routedPage;
+
+    switch(this.props.path)
+      {
+        case 'write':
+          routedPage=<Write />;
+          break;
+        case 'read':
+          routedPage=<Read/>;
+          break;
+        case 'settings':
+          routedPage=<SettingsForm/>;
+          break;
+        default:
+          routedPage=<Read />;
+          break;
+      }
+
+
     return (
-      <React.Fragment>
-
-        <AppBar {...this.props}/>
-
-        <Switch>
-            <Route path="/translate/"  component={A}/>
-            <Route path="/readers/" component={B}/>
-            <Route path="/settings/" component={A}/>
-            <Route path='*' component={B}/>
-        </Switch>
-      </React.Fragment>
+            <>
+              <AppBar {...this.props}/>
+              { routedPage }
+              <Footer />
+            </>
     );
   }
 }

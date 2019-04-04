@@ -1,10 +1,12 @@
 import json
 import pickle
 
-from nucypher.data_sources import DataSource
 from umbral.keys import UmbralPublicKey
+
+from nucypher.characters.lawful import Enrico
 from nucypher.crypto.kits import UmbralMessageKit
 from .channel import Channel
+from nucypher.crypto.powers import SigningPower
 
 
 class EncryptedDataPackage:
@@ -36,7 +38,7 @@ class EncryptedDataPackage:
 
         label_bytes = channel.label_bytes
         policy_pub_key_object = UmbralPublicKey.from_bytes(channel.policy_pubkey_bytes)
-        data_source = DataSource(policy_pubkey_enc=policy_pub_key_object)
+        data_source = Enrico(policy_encrypting_key=policy_pub_key_object)
         data_source_pubkey_bytes = bytes(data_source.stamp)
         message_kit, _signature = data_source.encrypt_message(data)
         kit_bytes = message_kit.to_bytes()
@@ -54,8 +56,8 @@ class EncryptedDataPackage:
         :param seralized_object:
         :return: EncryptedDataPackage instance
         '''
-        json_data = pickle.loads(seralized_object)
-        return cls.from_json(json_data)
+        data = pickle.loads(seralized_object)
+        return cls._from_dict(data)
 
     @classmethod
     def from_json(cls, json_data: str):
@@ -65,8 +67,7 @@ class EncryptedDataPackage:
         :return:
         '''
         try:
-            dict = json.loads(json_data)
-
+            data = json.loads(json_data)
             alice_pubkey_bytes = bytes.fromhex(dict['alice_pubkey'])
             data_source_pubkey_bytes = bytes.fromhex(dict['data_source_pubkey'])
             kit_bytes = bytes.fromhex(dict['kit'])
@@ -74,7 +75,31 @@ class EncryptedDataPackage:
             policy_pubkey_bytes = bytes.fromhex(dict['policy_pubkey'])
 
         except KeyError:
-            print("JSON was incorrect" + json_data)
+            print("Dict was incorrect" + data)
+            return None
+
+        return EncryptedDataPackage(alice_pubkey_bytes=alice_pubkey_bytes,
+                                    data_source_pubkey_bytes=data_source_pubkey_bytes,
+                                    kit_bytes=kit_bytes,
+                                    label_bytes=label_bytes,
+                                    policy_pubkey_bytes=policy_pubkey_bytes)
+
+    @classmethod
+    def _from_dict(cls, data: dict):
+        '''
+        Creates an EncryptedDataPackage from Dict
+        :param json:
+        :return:
+        '''
+        try:
+            alice_pubkey_bytes = data['alice_pubkey']
+            data_source_pubkey_bytes = data['data_source_pubkey']
+            kit_bytes =data['kit']
+            label_bytes = data['label']
+            policy_pubkey_bytes = data['policy_pubkey']
+
+        except KeyError:
+            print("Dict was incorrect" + data)
             return None
 
         return EncryptedDataPackage(alice_pubkey_bytes=alice_pubkey_bytes,
@@ -91,10 +116,9 @@ class EncryptedDataPackage:
         '''
         policy_pubkey_restored = UmbralPublicKey.from_bytes(self.policy_pubkey_bytes)
 
-        data_source_restored = DataSource.from_public_keys(
-            policy_public_key=policy_pubkey_restored,
-            datasource_public_key=self.data_source_pubkey_bytes,
-            label=self.label_bytes)
+        data_source_restored = Enrico.from_public_keys(
+            {SigningPower: self.data_source_pubkey_bytes},
+            policy_encrypting_key=policy_pubkey_restored)
 
         channel_reader.BOB.join_policy(self.label_bytes, self.alice_pubkey_bytes)
 
@@ -104,14 +128,23 @@ class EncryptedDataPackage:
         return channel_reader.BOB.retrieve(
             message_kit=message_kit_object,
             data_source=data_source_restored,
-            alice_verifying_key=alices_sig_pubkey)
+            alice_verifying_key=alices_sig_pubkey,
+            label=self.label_bytes)
 
     def to_bytes(self) -> bytes:
         '''
         Serialize object into bytes
         :return:
         '''
-        return pickle.dumps(self.to_json())
+        dict = {
+            'alice_pubkey': self.alice_pubkey_bytes,
+            'data_source_pubkey': self.data_source_pubkey_bytes,
+            'kit': self.kit_bytes,
+            'label': self.label_bytes,
+            'policy_pubkey': self.policy_pubkey_bytes,
+        }
+
+        return pickle.dumps(dict)
 
     def to_json(self) -> str:
         '''
