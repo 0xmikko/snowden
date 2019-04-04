@@ -1,0 +1,25 @@
+GET http://localhost:8000/api/item
+Accept: application/json
+
+###
+
+POST http://localhost:80000/api/item
+Content-Type: application/json
+
+{"hello":  "Check it"}
+
+###
+
+GET http://localhost:8000/api/item
+Accept: application/json
+
+###
+
+GET http://localhost:8000/api/item
+Accept: application/json
+{:
+"ddd": "dd"
+}:
+
+###
+
