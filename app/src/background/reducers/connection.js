@@ -4,7 +4,7 @@ import {updateState} from "../../utils/updateState";
 
 
 const initialState = {
-  connection: false,
+  status: false,
 };
 
 
@@ -17,7 +17,7 @@ export default (state=initialState, action) => {
 
         return updateState(state,
             {
-                connection: action.status
+                status: action.status
             });
 
       default:
@@ -25,5 +25,3 @@ export default (state=initialState, action) => {
 
   }
 }
-
-export const receivedPosts = (state) => (state.connection);

@@ -19,6 +19,6 @@ else
   fi
 fi
 
-HOST_NAME=com.google.chrome.example.echo
-rm "$TARGET_DIR/com.nutouch.connect.json"
+HOST_NAME=com.snowden.connect
+rm "$TARGET_DIR/com.snowden.connect.json"
 echo "Native messaging host $HOST_NAME has been uninstalled."

@@ -1,5 +1,5 @@
 import * as actions from '../../actions';
-import {sendMessage} from "../index";
+import {sendMessage} from "../native";
 
 
 export const encryptInit = () => {
