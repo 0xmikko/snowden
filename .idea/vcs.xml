@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/nucypher" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/support" vcs="Git" />
   </component>
 </project>

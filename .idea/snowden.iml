@@ -39,6 +39,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (snowden)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="support" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="pytest" />

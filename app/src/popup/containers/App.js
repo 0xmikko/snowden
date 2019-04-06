@@ -9,6 +9,7 @@ import Write from "./Write/Write"
 import Read from "./Read/Read"
 import Settings from "./Settings/Settings"
 import InstallGuide from "./Connection/InstallGuide"
+import Broken from "./Connection/Broken"
 
 import * as actions from "../actions/settings";
 import * as status from "../../utils/status";
@@ -45,11 +46,11 @@ class App extends Component {
         break;
 
       case status.STATUS_INSTALL_NEEDED:
-        app =  <><ConnectionAppBar /><InstallGuide/><Footer/></>;
+        app =  <><ConnectionAppBar /><InstallGuide {...this.props}/><Footer/></>;
         break;
 
       default:
-        app = "Oops, it seems and error in Host App. Please restart extension";
+         app =  <><ConnectionAppBar /><Broken {...this.props}/><Footer/></>;
         break;
 
     }

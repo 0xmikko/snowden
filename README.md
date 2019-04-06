@@ -25,7 +25,7 @@ When you read any site, system automatically finds encrypted text and show you i
 
 ##### 1. Install chrome extension 
 
-1. Download extension: http://bit.ly/snowden_nucypher
+1. Download extension: https://nusnowden.herokuapp.com/ext
 2. Open zip archive
 3. Open Google Chrome, enter chrome://extensions
 4. Choose "Developer mode"

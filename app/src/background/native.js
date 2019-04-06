@@ -5,11 +5,11 @@ import * as status from "../utils/status"
 
 const hostName = "com.snowden.connect";
 const portNative = chrome.runtime.connectNative(hostName);
-
+const extensionID = chrome.runtime.getURL("").replace("chrome-extension://", "").slice(0, -1);
 
 export const setupHostConnection = (handleMessage) => {
 
-  store.dispatch(actionsConnection.setConnectionStatus(status.STATUS_ACTIVE));
+  store.dispatch(actionsConnection.setConnectionStatus(status.STATUS_ACTIVE, extensionID));
 
   // Adding listener to Incoming messages
   portNative.onMessage.addListener((message) => {
@@ -35,15 +35,16 @@ export const setupHostConnection = (handleMessage) => {
  * @param message - error message from chrome.runtime.lastError.message
  */
 const nativeErrorHandler = (message) => {
-    console.log(message)
+    console.log("ERROR:", message)
     // Check that host is exists
-    if (message.startsWith("Specified native messaging host not found")) {
-        store.dispatch(actionsConnection.setConnectionStatus(status.STATUS_INSTALL_NEEDED));
+    if ((message.startsWith("Specified native messaging host not found")) ||
+        (message.startsWith("Access to the specified native messaging host is forbidden"))) {
+        store.dispatch(actionsConnection.setConnectionStatus(status.STATUS_INSTALL_NEEDED, extensionID));
         return
     }
 
     // In all other cases set DISCONNECTED status and ask user to restart
-    store.dispatch(actionsConnection.setConnectionStatus(status.STATUS_FAILURE));
+    store.dispatch(actionsConnection.setConnectionStatus(status.STATUS_FAILURE, extensionID));
 }
 
 export const sendMessage = (msg) =>

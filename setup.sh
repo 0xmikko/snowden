@@ -1,5 +1,6 @@
 #!/bin/sh
 
+mv com.snowden.connect.json host/
 # Check that python3 exist
 pypath=$(which python3)
 if [ ! $pypath ]

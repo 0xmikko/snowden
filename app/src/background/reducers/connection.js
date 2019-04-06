@@ -17,7 +17,8 @@ export default (state=initialState, action) => {
 
         return updateState(state,
             {
-                status: action.status
+                status: action.status,
+                ext_id: action.ext_id
             });
 
       default:
