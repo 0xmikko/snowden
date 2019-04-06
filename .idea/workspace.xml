@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c15118b3-7445-4a3f-a933-73a8bccad7ed" name="Default Changelist" comment="Installation guide was added">
-      <change afterPath="$PROJECT_DIR$/app/public/images/icon256.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/host/scripts/deploy_then_stake.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/host/scripts/run_local_fleet.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/host/scripts/run_local_ursula_fleet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/host/scripts/run_lonely_ursula.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/host/scripts/run_single_ursula.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/images/icon128.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/images/icon128.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/images/icon16.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/images/icon16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/images/icon32.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/images/icon32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/popup/containers/Connection/InstallGuide.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/popup/containers/Connection/InstallGuide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/crypto/reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/host/crypto/reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/keys/bob/config_root/bob.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/run" beforeDir="false" afterPath="$PROJECT_DIR$/host/run" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -107,12 +87,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="120">
-                <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <first_editor relative-caret-position="404">
+                <caret line="45" selection-start-line="45" selection-end-line="45" />
               </first_editor>
               <second_editor />
             </state>
@@ -218,7 +198,6 @@
         <option value="$PROJECT_DIR$/host/proteinaceous/test_translator.py" />
         <option value="$PROJECT_DIR$/host/proteinaceous/translator.py" />
         <option value="$PROJECT_DIR$/host/chrome_native/test_response.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/src/native.js" />
         <option value="$PROJECT_DIR$/app/src/background/index.js" />
         <option value="$PROJECT_DIR$/app/src/background/actions/decrypt.js" />
@@ -239,6 +218,7 @@
         <option value="$PROJECT_DIR$/host/crypto/reader.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/setup.sh" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -541,7 +521,7 @@
       <workItem from="1554527039875" duration="227000" />
       <workItem from="1554527446466" duration="199000" />
       <workItem from="1554547184565" duration="45000" />
-      <workItem from="1554584733579" duration="1147000" />
+      <workItem from="1554584733579" duration="1764000" />
     </task>
     <task id="LOCAL-00001" summary="Project structure created">
       <created>1554106363220</created>
@@ -607,7 +587,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102912000" />
+    <option name="totallyTimeSpent" value="103529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -970,16 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/popup/containers/Settings/Settings.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1028,6 +998,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="404">
+            <caret line="45" selection-start-line="45" selection-end-line="45" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
