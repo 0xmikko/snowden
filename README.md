@@ -23,26 +23,24 @@ When you read any site, system automatically finds encrypted text and show you i
 
 ### Installation
 
-##### 1. Install chrome extenstion 
+##### 1. Install chrome extension 
 
-1. Download 
-2. Enter app directory (cd app)
-3. Collect packages (yarn)
-4. Build extension (yarn build)
-5. Open Google Chrome, enter chrome://extension
-6. Press "Add unpacked extension" button and choose "app/build" directory
-7. Write extension hash code 
+1. Download extension: http://bit.ly/snowden_nucypher
+2. Open zip archive
+3. Open Google Chrome, enter chrome://extensions
+4. Choose "Developer mode"
+5. Click on "Load unpacked"
+6. Choose folder with extension
+7. Open extension
 
 ##### 2.Install host application
-1. Download package
-2. Create virtual environment (virtualenv venv in working directory)
-3. Download packages (pip install -r requirements.txt)
-4. Open file (host/chrome_showden_.json) and change hash code to code you've written in step 7 of Google Chrom installation
-4. Install Host app in Google Chrome (bash ./host/install_)
-5. Reload chrome extension
+1. Download host app (host.zip)
+2. Unpack archive
+3. Check that you have python3 and virtualenv
+4. Go to directory
+5. Run "python ./setup.py
 
-### What's in package
+Important:
+This package run nucypher network in local mode by default. If you want to connect main net, please ping me.
 
-#### App
-Google Chrome ex 
 
