@@ -38,7 +38,7 @@ When you read any site, system automatically finds encrypted text and show you i
 2. Unpack archive
 3. Check that you have python3 and virtualenv
 4. Go to directory
-5. Run "python ./setup.py
+5. Run "sh ./setup.sh"
 
 Important:
 This package run nucypher network in local mode by default. If you want to connect main net, please ping me.
