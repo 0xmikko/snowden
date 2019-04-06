@@ -1,2 +1,5 @@
+#!/bin/sh
+
 source ../venv/bin/activate > /dev/null
+sh ./scripts/run_local_fleet.sh > /dev/null
 python ./app.py

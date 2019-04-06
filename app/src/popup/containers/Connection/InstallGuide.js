@@ -1,6 +1,7 @@
 import React from "react";
 import {Container} from "react-bootstrap";
 
+
 const InstallGuide = (props) => {
     return <Container fluid style={{ paddingLeft: 20, paddingRight: 20, marginTop: 15, overflow: "scroll"}}>
             <h3>Host app is not detected</h3>
@@ -15,8 +16,8 @@ const InstallGuide = (props) => {
             <h5>Requirements</h5>
             To use this host app you need:
             <ul>
-                <li>Python 3.6 or higher</li>
-                <li>Pip and virtualenv installed</li>
+                <li>python 3.6 or higher</li>
+                <li>pip and virtualenv installed</li>
             </ul>
             <h5>Still have problems?</h5>
         Please, do not hesitate and connect me via telegram <a href={"https://t.me/@mikael_l"} target={"_blank"}>@mikael_l</a> and I'll try to help you with installation.

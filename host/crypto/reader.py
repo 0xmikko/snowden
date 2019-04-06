@@ -84,7 +84,7 @@ class ChannelReader:
             bob_config.keyring.unlock(password=passphrase)
             bob = bob_config.produce()
 
-        except ValueError:
+        except:
             shutil.rmtree(self.TEMP_BOB_DIR, ignore_errors=True)
             os.mkdir(self.TEMP_BOB_DIR)
 
