@@ -1,31 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c15118b3-7445-4a3f-a933-73a8bccad7ed" name="Default Changelist" comment="Readme updated">
-      <change afterPath="$PROJECT_DIR$/app/src/popup/containers/Connection/Broken.js" afterDir="false" />
+    <list default="true" id="c15118b3-7445-4a3f-a933-73a8bccad7ed" name="Default Changelist" comment="Installer updated">
       <change afterPath="$PROJECT_DIR$/support/host_orig.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/snowden.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/snowden.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/background/actions/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/background/actions/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/background/native.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/background/native.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/background/reducers/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/background/reducers/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/popup/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/popup/containers/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/popup/containers/Connection/InstallGuide.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/popup/containers/Connection/InstallGuide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/com.snowden.connect-win.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/com.snowden.connect.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/install_host.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/request_handler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/run.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/scripts/deploy_then_stake.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/scripts/run_local_fleet.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/scripts/run_local_ursula_fleet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/scripts/run_lonely_ursula.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/scripts/run_single_ursula.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/host/uninstall_host.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/popup/containers/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+            <state relative-caret-position="362">
+              <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -106,18 +84,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/background/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-28">
-              <caret line="8" column="94" selection-start-line="8" selection-end-line="8" selection-end-column="94" />
-              <folding>
-                <element signature="e#19#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/background/native.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="107">
@@ -126,6 +92,18 @@
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#20#48#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="329">
+                <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -250,7 +228,6 @@
         <option value="$PROJECT_DIR$/host/run" />
         <option value="$PROJECT_DIR$/host/crypto/reader.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/src/background/actions/connection.js" />
         <option value="$PROJECT_DIR$/app/src/background/reducers/connection.js" />
         <option value="$PROJECT_DIR$/setup.sh" />
@@ -259,6 +236,7 @@
         <option value="$PROJECT_DIR$/app/src/popup/containers/Connection/InstallGuide.js" />
         <option value="$PROJECT_DIR$/app/src/popup/containers/Connection/Broken.js" />
         <option value="$PROJECT_DIR$/app/src/popup/containers/App.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -279,53 +257,6 @@
             <path>
               <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
               <item name="snowden" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snowden" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snowden" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snowden" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="background" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snowden" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="popup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snowden" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="popup" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snowden" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="popup" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="Connection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snowden" type="462c0819:PsiDirectoryNode" />
-              <item name="host" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="snowden" type="b2602c69:ProjectViewProjectNode" />
@@ -592,7 +523,7 @@
       <workItem from="1554527446466" duration="199000" />
       <workItem from="1554547184565" duration="45000" />
       <workItem from="1554584733579" duration="2136000" />
-      <workItem from="1554590974738" duration="2482000" />
+      <workItem from="1554590974738" duration="2794000" />
     </task>
     <task id="LOCAL-00001" summary="Project structure created">
       <created>1554106363220</created>
@@ -629,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1554587489561</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Installer updated">
+      <created>1554595042386</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554595042386</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -665,7 +603,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106383000" />
+    <option name="totallyTimeSpent" value="106695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -732,7 +670,8 @@
     <MESSAGE value="Exclude pytest_cache" />
     <MESSAGE value="Installation guide was added" />
     <MESSAGE value="Readme updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Readme updated" />
+    <MESSAGE value="Installer updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Installer updated" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/snowden$pytest_for_test_TranslatorTest.coverage" NAME="pytest for test.TranslatorTest Coverage Results" MODIFIED="1554404190106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/host" />
@@ -1017,16 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="134">
-            <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/background/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1121,11 +1050,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/popup/containers/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+        <state relative-caret-position="362">
+          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="329">
+            <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
