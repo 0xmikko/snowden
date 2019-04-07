@@ -3,8 +3,7 @@
 A modern anti-censor system. Share your thoughts and opinion with other in a new way.
 
 [![pyversions](https://img.shields.io/pypi/pyversions/nucypher.svg)](https://pypi.org/project/nucypher/)
-[![coveralls](https://coveralls.io/repos/github/nucypher/nucypher/badge.svg?branch=master)](https://coveralls.io/github/nucypher/nucypher?branch=master)
-[![license](https://img.shields.io/pypi/l/nucypher.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![coveralls](https://coveralls.io/repos/github/nucypher/nucypher/badge.svg?branch=master)]
 
 ---
 ### Problem:
@@ -24,6 +23,7 @@ When you read any site, system automatically finds encrypted text and show you i
 ## Get started
 
 ### How to install
+Video manual: https://youtu.be/-06vL9u6pwQ
 
 ##### 1. Install chrome extension 
 
