@@ -86,7 +86,7 @@ class App(object):
             response_payload = {"result": result}
             self.communicator.log(response_payload)
             return Response(payload=response_payload, status=200)
-        except ValueError:
+        except:
             return Response(payload=None, status=400)
 
     def request_settings(self, payload: dict) -> Response:
