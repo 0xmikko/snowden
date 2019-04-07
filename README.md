@@ -6,10 +6,12 @@ A modern anti-censor system. Share your thoughts and opinion with other in a new
 
 ---
 ### Problem:
-Share your opinion and got a ban from Facebook? Authorities try to block all your posts? Publishing your opposite opinion could be a reason for criminal prosecution? Today social networks and authorities try to control people and block free opinions share. We need a robust system which could protect persons who share information and make it’s visible for selected people and pointless for others.
+Every day thousand of facebook validators check your messages and decide which things you could share and which are not. We are against censorship in internet.Furthermore, publishing your opinion could be a reason for criminal prosecution. Today social networks and authorities try to control people and decide what we could tell. 
  
 ### Solution:
-Snowden is a Google Chrome extension which helps you to share your thoughts for selected list of people (no limit how much they are) using NuCypher Technology. You could simply encrypt your message into human readble text and nobody could claim you. Only selected peopls could read “between lines” and see what you want to share.
+Snowden is a google chrome extension which encode your posts into smiles and grant access to all your friends (Thanks to Nucypher technology). Nobody except them could read and understand what you want to share in your news feed.
+
+Your privacy in your hands!
 
 Extension provides two basic functions:
  
