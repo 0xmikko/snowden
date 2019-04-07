@@ -3,7 +3,6 @@
 A modern anti-censor system. Share your thoughts and opinion with other in a new way.
 
 [![pyversions](https://img.shields.io/pypi/pyversions/nucypher.svg)](https://pypi.org/project/nucypher/)
-[![coveralls](https://coveralls.io/repos/github/nucypher/nucypher/badge.svg?branch=master)]
 
 ---
 ### Problem:
