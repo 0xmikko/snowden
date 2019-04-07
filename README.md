@@ -21,7 +21,9 @@ Simply share your thoughts via public networks, just insert your text into exten
 #### Decrypt messages
 When you read any site, system automatically finds encrypted text and show you it if it’s found a new one.
 
-### Installation
+## Get started
+
+### How to install
 
 ##### 1. Install chrome extension 
 
@@ -42,5 +44,24 @@ When you read any site, system automatically finds encrypted text and show you i
 
 Important:
 This package run nucypher network in local mode by default. If you want to connect main net, please ping me.
+
+
+### How to use
+
+#### Write post
+
+1. Open extension and the tab "Write post"
+2. Wrute you post
+3. Press "Encode post"
+4. After encoding (it could take time) you will see a post converted into smile.
+5. You could copy it by yourself or press "Copy to clipboard".
+6. Post whole post into social network.
+
+#### Read posts
+
+1. Open facebook and look at your page
+2. If encrypted post was shortened by facebook, press "More..."
+3. You could see a quantity of found posts in the badge
+4. Open extension and read them
 
 
