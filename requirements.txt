@@ -16,7 +16,7 @@ coincurve==11.0.0
 colorama==0.4.1
 constant-sorrow==0.1.0a8
 constantly==15.1.0
-cryptography==2.6.1
+cryptography==3.2
 cytoolz==0.9.0.1
 dateparser==0.7.1
 docutils==0.14
